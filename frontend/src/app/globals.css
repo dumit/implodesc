@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    
+    /* Supply chain colors */
+    --color-extraction: 25 95% 53%;
+    --color-processing: 142 76% 36%;
+    --color-manufacturing: 217 91% 60%;
+    --color-transportation: 271 91% 65%;
+    --color-retail: 339 82% 52%;
+    
+    /* Carbon footprint colors */
+    --color-carbon-low: 142 76% 36%;
+    --color-carbon-medium: 43 96% 56%;
+    --color-carbon-high: 0 84% 60%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+    
+    /* Dark mode supply chain colors */
+    --color-extraction: 25 95% 53%;
+    --color-processing: 142 76% 36%;
+    --color-manufacturing: 217 91% 60%;
+    --color-transportation: 271 91% 65%;
+    --color-retail: 339 82% 52%;
+    
+    /* Dark mode carbon colors */
+    --color-carbon-low: 142 76% 36%;
+    --color-carbon-medium: 43 96% 56%;
+    --color-carbon-high: 0 84% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .supply-chain-step {
+    @apply relative p-4 border rounded-lg transition-all duration-200 hover:shadow-md;
+  }
+  
+  .supply-chain-step--extraction {
+    @apply border-supply-chain-extraction bg-supply-chain-extraction/10;
+  }
+  
+  .supply-chain-step--processing {
+    @apply border-supply-chain-processing bg-supply-chain-processing/10;
+  }
+  
+  .supply-chain-step--manufacturing {
+    @apply border-supply-chain-manufacturing bg-supply-chain-manufacturing/10;
+  }
+  
+  .supply-chain-step--transportation {
+    @apply border-supply-chain-transportation bg-supply-chain-transportation/10;
+  }
+  
+  .supply-chain-step--retail {
+    @apply border-supply-chain-retail bg-supply-chain-retail/10;
+  }
+  
+  .carbon-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  
+  .carbon-badge--low {
+    @apply bg-carbon-low/10 text-carbon-low border border-carbon-low/20;
+  }
+  
+  .carbon-badge--medium {
+    @apply bg-carbon-medium/10 text-carbon-medium border border-carbon-medium/20;
+  }
+  
+  .carbon-badge--high {
+    @apply bg-carbon-high/10 text-carbon-high border border-carbon-high/20;
+  }
+}
