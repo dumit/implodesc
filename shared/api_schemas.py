@@ -4,7 +4,7 @@ API request and response schemas for Implodesc
 from typing import List, Optional
 from pydantic import BaseModel
 
-from .schemas import (
+from schemas import (
     AnalysisRequest,
     ClarificationQuestion,
     ClarificationResponse,

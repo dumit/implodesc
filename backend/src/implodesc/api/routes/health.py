@@ -5,10 +5,16 @@ from datetime import datetime
 from typing import Dict, Any
 
 from fastapi import APIRouter, Depends
+from pydantic import BaseModel
 import structlog
 
 from ...core.config import Settings, get_settings
-from ....shared.api_schemas import HealthResponse
+
+class HealthResponse(BaseModel):
+    """Health check response"""
+    status: str = "healthy"
+    version: str
+    timestamp: str
 
 logger = structlog.get_logger(__name__)
 router = APIRouter()

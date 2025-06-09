@@ -8,7 +8,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 
-from .api.routes import analysis, health
+from .api.routes import health, analysis
 from .core.config import get_settings
 from .core.logging import setup_logging
 

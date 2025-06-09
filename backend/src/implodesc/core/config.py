@@ -76,7 +76,7 @@ class Settings(BaseSettings):
         description="Anthropic API key"
     )
     default_ai_model: str = Field(
-        default="gpt-4-turbo-preview",
+        default="gpt-4o",
         description="Default AI model to use"
     )
     ai_max_tokens: int = Field(

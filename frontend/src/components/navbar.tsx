@@ -1,12 +1,12 @@
 'use client';
 
-import { UserButton, useAuth } from '@clerk/nextjs';
 import { Button } from '@/components/ui/button';
 import { BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 
 export function Navbar() {
-  const { isSignedIn } = useAuth();
+  // Temporarily disable auth for testing
+  const isSignedIn = false;
 
   return (
     <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -36,7 +36,7 @@ export function Navbar() {
           </nav>
           <div className="flex items-center space-x-4">
             {isSignedIn ? (
-              <UserButton afterSignOutUrl="/" />
+              <div>User Menu</div>
             ) : (
               <div className="flex items-center space-x-2">
                 <Button variant="ghost" size="sm" asChild>
